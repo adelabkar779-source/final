@@ -9,6 +9,7 @@ import DetailModal from './components/DetailModal'
 import TrailerModal from './components/TrailerModal'
 import SpinWheel from './components/SpinWheel'
 import WatchlistDrawer from './components/WatchlistDrawer'
+import TrendingNow from './components/TrendingNow'
 
 const defaultFilters = { type: 'all', genre: 'all', mood: 'all', platform: 'all', minRating: 5.0 }
 
@@ -80,13 +81,14 @@ function App() {
     setDetailItem(randomItem)
   }
 
-  return (
+   return (
     <>
       <Header searchQuery={searchQuery} onSearch={setSearchQuery} watchlistCount={watchlist.length}
         onOpenWheel={() => setShowWheel(true)} onOpenWatchlist={() => setShowDrawer(true)} onGoHome={goHome} />
 
       <main className="main-content">
         <Hero onPickMood={pickMood} />
+        <TrendingNow />
         <Filters filters={filters} setFilter={setFilter} resultsCount={visibleItems.length}
           isCustom={isCustom} onReset={resetFilters} />
         <MovieGrid items={visibleItems} watchlist={watchlist} sortBy={sortBy} onSort={setSortBy}
