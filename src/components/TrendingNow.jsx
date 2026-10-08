@@ -36,23 +36,25 @@ function TrendingNow() {
         </section>
       </header>
 
-      <section className="catalog-grid">
-        {movies.map((m) => (
-          <article key={m.id} className="movie-card">
-            <figure className="card-poster-wrapper">
-              {m.poster_path && <img src={IMG + m.poster_path} alt={m.title} className="card-poster" />}
-              <span className="card-rating">
-                <i className="fa-solid fa-star"></i> {m.vote_average.toFixed(1)}
-              </span>
-            </figure>
-            <section className="card-info">
-              <h4 className="card-title">{m.title}</h4>
-              <p className="card-genres">{m.release_date?.slice(0, 4)}</p>
-            </section>
-          </article>
-        ))}
-      </section>
+        <section className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
+         {movies.map((m) => (
+        <section key={m.id} className="col">
+         <article className="movie-card">
+         <figure className="card-poster-wrapper">
+          {m.poster_path && <img src={IMG + m.poster_path} alt={m.title} className="card-poster" />}
+          <span className="card-rating">
+            <i className="fa-solid fa-star"></i> {m.vote_average.toFixed(1)}
+          </span>
+        </figure>
+        <section className="card-info">
+          <h4 className="card-title">{m.title}</h4>
+          <p className="card-genres">{m.release_date?.slice(0, 4)}</p>
+        </section>
+             </article>
+         </section>
+          ))}
     </section>
+     </section>
   )
 }
 

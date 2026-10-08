@@ -18,7 +18,7 @@ function Hero({ onPickMood }) {
         </span>
         <h1 className="hero-headline">
           Stop Scrolling. <br />
-          <span className="gradient-text">Start Watching Greatness.</span>
+          <span className="gradient-text">Start Watching fastly.</span>
         </h1>
         <p className="hero-description">
           Select your mood, favorite genre, or preferred streaming platform. Our recommendation engine finds your next watch in seconds.

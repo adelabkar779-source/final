@@ -44,11 +44,14 @@ function MovieGrid({ items, watchlist, sortBy, onSort, onOpen, onToggleSave, onR
         </section>
       </header>
 
-      <section className="catalog-grid">
-        {items.map((item) => (
-          <MovieCard key={item.id} item={item} isSaved={watchlist.some((w) => w.id === item.id)}
-            onOpen={onOpen} onToggleSave={onToggleSave} />
-        ))}
+       <section className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
+     {items.map((item) => (
+     <section key={item.id} className="col">
+      <MovieCard item={item}
+         isSaved={watchlist.some((w) => w.id === item.id)}
+        onOpen={onOpen} onToggleSave={onToggleSave} />
+       </section>
+      ))}
       </section>
 
       {items.length === 0 && (
